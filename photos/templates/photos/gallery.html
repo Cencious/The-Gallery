@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-
+                    {% for photo in photos%}
                     <div class="col-md-4">
                         <div class="card my-2">
                             <img class="image-thumbail" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*" alt="Card image cap">
@@ -48,7 +48,7 @@
                             <a href="{% url 'photo' 5%}" class="btn btn-outline-dark ">View</a>
                         </div>
                     </div>
-                   
+                   {% endfor %}
                 </div>
             </div>
 
