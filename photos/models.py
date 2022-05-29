@@ -13,7 +13,9 @@ class category(models.Model):
         return self.name
 
 class photo(models.Model):
-   category= models.ForeignKey(category, on_delete=models.SET_NULL)
+   category= models.ForeignKey(category, on_delete=models.SET_NULL, null=True, blank=True)
+   
    image= models.ImageField(null=False, blank=False)
+   des
 
   
