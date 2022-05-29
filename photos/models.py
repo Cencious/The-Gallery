@@ -1,3 +1,5 @@
+from argparse import ONE_OR_MORE
+from turtle import onclick
 from unicodedata import name
 from django.db import models
 
@@ -9,3 +11,8 @@ class category(models.Model):
 
     def __str__(self):
         return self.name
+
+class photo(models.Model):
+   category= models.ForeignKey(category, on_delete=models.SET_NULL)
+
+  
