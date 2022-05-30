@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content%}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo</title>
+    
+    <link rel=”stylesheet” href="../../../static/css/photo.css">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 
 </head>
 <body class="m-5">
@@ -14,14 +20,21 @@
         <div class="row justify-content-center">
             <div class="col-">
                 <a href="{% url 'gallery' %}"class="btn btn-dark my-3">Go Back</a>
-                <div style="height:90vh;">
-                    <img style="max-width:100%; max-height: 100%;" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*" alt="">
-                    <p>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+
+                <div class="content_img">
+                    <div style="height:90vh;">
+                        <img style="max-width:100%; max-height: 100%;" src="{{photo.image.url}} " alt="">
+                        <div class="description">
+                        <p>{{photo.description}} </p>
+                        <p>Location :{{photo.location.location }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
 
     </div>
+{%endblock%}
 </body>
 </html>
