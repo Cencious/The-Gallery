@@ -14,9 +14,12 @@ def gallery(request):
 
 
 def viewPhoto(request, pk):
-    return render(request, 'photos/photo.html')
+    photos = Photo.objects.get(id=pk)
+    return render(request, 'photos/photo.html',{'photo':photos})
 
 
 
 def addPhoto(request):
-    return render(request, 'photos/add.html') 
+    categories = Category.objects.all()
+    context = {'categories':categories,}
+    return render(request, 'photos/add.html', context) 
