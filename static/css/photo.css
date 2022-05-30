@@ -1,0 +1,18 @@
+*{
+    background-color: #0f164a;
+}
+.content_img{
+    position: relative;
+
+}
+.content_img .description{
+    position:absolute;
+    color: #9a190f;
+}
+
+.content_img:hover{
+    cursor: pointer;
+   }
+.categories{
+    color: #9a190f;
+}
