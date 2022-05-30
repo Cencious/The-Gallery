@@ -7,11 +7,17 @@ from .models import Category, Photo
 
 def gallery(request):
     category = request.GET.get('category')
-    print('category:', category)
+    # print('category:', category)
+    # check if there is data in the gallery category
+
+    if category ==None:
+       photos = Photo.objects.all()
+    else:
+         photos = Photo.objects.filter(category__name=category)
 
 
     categories = Category.objects.all()
-    photos = Photo.objects.all()
+    
     context = {'categories':categories, 'photos':photos}
 
     return render(request, 'photos/gallery.html', context)
