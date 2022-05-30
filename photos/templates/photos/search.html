@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+
+<div class="row">
+    {% if photos %}
+    <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+    <h2> Found 0 photos for the search term {{message}}</h2>
+    {% endif %}
+
+</div>
+
+<div class="row">
+
+{% if photos %}
+    {% for photos in photos %}
+    <div class="col-sm-6">
+        <a href="{% url 'gallery' %}"class="btn btn-dark my-3">Go Back</a>
+        <img src="{{photos.image.url}}" height="200px" width="300px" alt="">
+        
+    </div>
+    <div class="col-md-4">
+        <h3><u>{{photos.title}}</u></h3>
+        <p>Description: {{photos.description}}</p>
+        <p>Category: {{photos.category.name}}</p>
+        <p>Location taken: {{photos.location.location}}</p>
+        <p class="text-muted"> Posted {{photos.pub_date |timesince}} by {{photos.poster.first_name}} </p>
+        
+
+    </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
