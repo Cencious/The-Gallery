@@ -20,7 +20,7 @@ def gallery(request):
     
     context = {'categories':categories, 'photos':photos}
 
-    return render(request, 'photos/gallery.html', context)
+    return render(request, 'photos/gallery.html',context)
 
 
 def viewPhoto(request, pk):
