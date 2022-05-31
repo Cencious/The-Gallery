@@ -5,7 +5,7 @@
 * Innoncencia Kakan.
 
 ## 
-![Alt text](/screenshot/Screenshot.png "Optional Title")
+![Alt text](./screenshot/Screenshot%20.png "Optional Title")
 
 ## Description:
 The Gallery is personal gallery application that display photos for others to see.
@@ -23,8 +23,8 @@ https://cegallery.herokuapp.com/
 
 **BDD** <br/>
 ****
-| Behaviour | Input | Output |
-| :---------------- | :---------------: | ------------------: |
+| Behaviour | Input | 
+| :---------------- | :---------------: 
 | Load the page | **On page load** 
 | Click view to view the image details, it takes you to single Image page| You can copy the image link by right clicking on the image.|
 | You can click on go back to go to previous page| You can add more images by category,location | 
@@ -39,11 +39,11 @@ https://cegallery.herokuapp.com/
 
 * Run the application: $ python manage.py runserver
 
-* Now navigate to your browser at: localhost://127.0.0.1000/
+* Now navigate to your browser at: localhost://127.0.0.8000/
 
 ## Technologies Used
-* Python3
-* Django4.0.4- for app 
+* Python3 <br>
+* Django4 <br>
 * Heroku- for deployment
 
 ## Support and contact details
