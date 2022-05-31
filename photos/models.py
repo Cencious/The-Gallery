@@ -24,19 +24,6 @@ class Category(models.Model):
         category = Category.object.get(pk = id)
         return category
 
-class Photo(models.Model):
-   category= models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-
-
-   image= models.ImageField(null=False, blank=False)
-   description = models.TextField()
-
-#    location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
-#    pub_date = models.DateTimeField(auto_now_add=True, null=True) 
-
-   def __str__(self):
-       return self.description
-
 class Location(models.Model):
     name = models.CharField(max_length=30)
     def __str__(self):
@@ -52,5 +39,20 @@ class Location(models.Model):
     def get_location_id(cls, id):
         locate = Location.objects.get(pk = id)
         return locate
+
+
+class Photo(models.Model):
+   category= models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+   location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True)
+
+   image= models.ImageField(null=False, blank=False)
+   description = models.TextField()
+
+   
+#    pub_date = models.DateTimeField(auto_now_add=True, null=True) 
+
+   def __str__(self):
+       return self.description
+
 
   
