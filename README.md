@@ -1,11 +1,11 @@
 ## App Name
 * The-Gallery
 
+
+![Alt text](./static/screenshot/Screenshot.png "Optional Title")
+
 ## Author
 * Innoncencia Kakan.
-
-## 
-![Alt text](./screenshot/Screenshot.png)
 
 ## Description:
 The Gallery is personal gallery application that display photos for others to see.
