@@ -5,7 +5,7 @@
 * Innoncencia Kakan.
 
 ## 
-![Alt text](./screenshot/Screenshot.png "Optional Title")
+![Alt text](./screenshot/Screenshot.png)
 
 ## Description:
 The Gallery is personal gallery application that display photos for others to see.
