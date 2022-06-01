@@ -63,7 +63,7 @@ def addPhoto(request):
     context = {'categories':categories,}
     return render(request, 'photos/add.html', context) 
 
-def search_results(request):
+def searchPhoto(request):
 
     if 'photo' in request.GET and request.GET["photo"]:
         search_term = request.GET.get("photo")
