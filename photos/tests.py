@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Location,Category,Location
+from .models import Location,Category,Location, Photo
 import datetime as dt
 
 # Create your tests here.
@@ -35,7 +35,7 @@ class CategoryTestClass(TestCase):
 class PhotoTestCase(TestCase):
      def setUp(self):
         self.Pets = Category(name='Pets')
-        self.Food.save_category()
+        self.Pets.save_category()
 
         self.new_image.Category.add(self.new_category)
         self.new_image.Location.add(self.new_location)
@@ -44,15 +44,15 @@ class PhotoTestCase(TestCase):
         self.new_location.save()
 
      def tearDown(self):
-         Image.objects.all().delete()
+         Photo.objects.all().delete()
          Category.objects.all().delete()
          Location.objects.all().delete()
        
 
-     def test_deleteImage(self):
+     def test_deletePhoto(self):
             
         self.new_image.deleteImage()
-        image = Image.objects.all()
+        image = Photo.objects.all()
         self.assertEqual(len(image),0 )
 
     
@@ -62,12 +62,5 @@ class PhotoTestCase(TestCase):
         
      def test_get_photo_by_id(self):
         test_id=1
-        a_photo = photo.objects.filter(test_id)
+        a_photo = Photo.objects.filter(test_id)
         self.assertTrue(len(a_photo)>0)
-
-
-     def search_by_category(self):
-            image = cls.objects.filter(category__name__contains=search_term)
-            return image
-            self.assertTrue(len(search_term)==0)
-
