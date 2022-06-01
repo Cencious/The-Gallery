@@ -19,8 +19,6 @@ class LocationTestClass(TestCase):
         location = Location.get_location_id(self.Kericho.id)
         self.assertTrue(location.location == 'Kericho')
     
-    def tearDown(self):
-        self.Kisumu.delete_location() 
 
         
 class CategoryTestClass(TestCase):
