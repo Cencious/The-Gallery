@@ -1,8 +1,7 @@
 ## App Name
 * The-Gallery
 
-
-![Alt text](./static/screenshot/Screenshot.png "Optional Title")
+![Alt text](./static/screenshot/cover.png "Optional Title")
 
 ## Author
 * Innoncencia Kakan.
@@ -12,6 +11,11 @@ The Gallery is personal gallery application that display photos for others to se
 
 ## Live link:
 https://cegallery.herokuapp.com/
+
+##
+![Alt text](./static/screenshot/Screenshot.png "Optional Title")
+
+
 
 ## User stories
 
