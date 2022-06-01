@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Location,Category,Location, Photo
+from .models import Location,Category,Photo
 import datetime as dt
 
 # Create your tests here.
