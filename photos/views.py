@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
-from .models import Category, Photo
+from .models import Category, Photo, Location
 
 
 
 # Create your views here.
 
 def gallery(request):
+    photos= Photo.objects.all()
+    categories = Category.objects.all()
+    # location = request.GET.get('location')
     category = request.GET.get('category')
     # print('category:', category)
     # check if there is data in the gallery category
@@ -13,19 +16,21 @@ def gallery(request):
     if category ==None:
        photos = Photo.objects.all()
     else:
+        # photos = Photo.objects.filter(location__location=location)
          photos = Photo.objects.filter(category__name=category)
 
-
+    # locations = Location.objects.all()
     categories = Category.objects.all()
     
-    context = {'categories':categories, 'photos':photos}
+    context = {'categories':categories, 'photos':photos, }
 
     return render(request, 'photos/gallery.html',context)
 
 
 def viewPhoto(request, pk):
     photos = Photo.objects.get(id=pk)
-    return render(request, 'photos/photo.html',{'photo':photos})
+
+    return render(request, 'photos/photo.html',{'photo':photos,})
 
 
 
@@ -57,3 +62,16 @@ def addPhoto(request):
 
     context = {'categories':categories,}
     return render(request, 'photos/add.html', context) 
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Photo.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'photos/search.html',{"message":message,"photos": searched_photos})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'photos/search.html',{"message":message})
